@@ -7,7 +7,7 @@
 	  sau đó	  
 	  
 		  docker run --privileged -d -p 5000:5000 chinese-lazy-theorem-1
-	- ![Hình ảnh lệnh trên](evidenceForActivate.png)
+	- ![Hình ảnh lệnh trên](chinese-lazy-theorem-1/asset/evidenceForActivate.png)
 	- Kiểm tra môi trường đã được kích hoạt chưa bằng docker ps
 	  ![hình ảnh docker ps](evidenceForSuccessActivation.png)
 - Quy trình làm bài:
@@ -22,26 +22,26 @@
 			  nc localhost 5000
 	  để kết nối vào server mô phỏng
 	- Khi nhập lệnh ta thu được 
-	  ![Hình ảnh sau netcat](./asset/netcat.png)
+	  ![Hình ảnh sau netcat](chinese-lazy-theorem-1/asset/netcat.png)
 	- Vào 1, ta nhận được:
-	  ![Sau khi nhập 1](./asset/afterenter1firsttime.png)
+	  ![Sau khi nhập 1](chinese-lazy-theorem-1/asset/afterenter1firsttime.png)
 	- Nhập thử 12, ta nhận được:
-	  ![Nhập xong 12](./asset/enter12.png)
+	  ![Nhập xong 12](chinese-lazy-theorem-1/asset/enter12.png)
 	- Nhập thử 2, hệ thống bảo ta nhập số mà ta đoán. Nhập thử 3 ta được:
-	  ![Nhập sai](./asset/enterthewrongthing.png)
+	  ![Nhập sai](chinese-lazy-theorem-1/asset/enterthewrongthing.png)
 	- Dựa trên quy trình trên, ta có thể đặt ra vài giả thuyết sau:
 		- Để tìm thấy cờ, ta cần phải đoán ra một số cụ thể, tạm gọi nó là target.
 		- Khi nhập 1, bài cho ta nhập một số ngẫu nhiên m. Kết quả server trả về là  kết quả của phép target % m
 		- Khi nhập 2, nếu ta nhập đúng target, ta sẽ nhận được cờ.
 	- Ta kiểm tra file chinese-lazy-theorem-1.py được cung cấp trong provide:
-	  ![Code](./asset/code.png)
+	  ![Code](chinese-lazy-theorem-1/asset/code.png)
 	- Dựa trên đoạn code trên, có thể khẳng định vài thứ:
 		- Đầu tiên, giả thiết phía trên là đúng
 		- Thứ hai, 2 số được đưa ra khi mới netcat là 2 số nguyên tố p và q
 		- Thứ ba, target là số ngẫu nhiên sinh ra trong khoảng từ 1 đến pq
 	- Dựa vào 3 điều trên, ta có giải pháp giải bài trên như sau: ta sẽ lấy tích của 2 số p và q, sau đó chọn 1 và nhập tích trên, chỉ có 2 khả năng có thể xảy ra: nếu ra 0, số cần tìm là tích p và q; nếu không ra 0 thì đó là số cần tìm.
 	- Quay lại và thử, ta được:
-		![Kết quả](./asset/result.png)
+		![Kết quả](chinese-lazy-theorem-1/asset/result.png)
 	- Flag ta tìm thấy: lactf{too_lazy_to_bound_the_modulus}
 	- Để tự động hóa quá trình giải bài trên, ta viết một đoạn code bằng thư viện pwntools:
 ``` python
