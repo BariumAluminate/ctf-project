@@ -1,4 +1,4 @@
-#Cryptography 
+# Cryptography 
 - Mô phỏng lại bài tập:
 	- Do có file dockerfile nên ta có thể kích hoạt docker để mô phỏng lại môi trường bài tập
 	- Mở terminal, nhập lệnh 
